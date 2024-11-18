@@ -1,2 +1,2 @@
 # Puzzle
-JUEGO de rompecabezas con HTML, CSS y JAVASCRIPT - Versión mejorada
+JUEGO de rompecabezas con HTML, CSS y JAVASCRIPT - Versión mejorada!
