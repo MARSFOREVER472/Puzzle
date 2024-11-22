@@ -31,11 +31,18 @@ function addEventListeners()
     fichas.forEach(token => token.addEventListener('click', () => {
 
         let actualPosition = searchPosition(token.innerText);
+        console.log(actualPosition);
+
+        let emptyPosition = searchPosition('');
+        console.log(emptyPosition);
     }))
 }
 
 function searchPosition(element)
 {
+    let rowIndex = 0;
+    let columnIndex = 0;
+
     matrix.forEach((row, index) => {
 
         let elementoFila = row.findIndex(item =>
@@ -44,9 +51,14 @@ function searchPosition(element)
         if (elementoFila !== -1)
         {
             // console.log(elementoFila, index);
-            console.log(index, elementoFila);
+            // console.log(index, elementoFila);
+
+            rowIndex = index;
+            columnIndex = elementoFila;
         }
     })
+
+    return [rowIndex, columnIndex];
 }
 
 
