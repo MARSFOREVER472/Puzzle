@@ -3,7 +3,7 @@
 let matrix = [
     ['1', '2', '3'],
     ['4', '5', '6'],
-    ['7', '8', ''],
+    ['7', '', '8'],
 ]
 
 let board = document.querySelector('.board');
@@ -25,6 +25,34 @@ function ilustrarFichas()
         
 }
 
+function nextMovement(actualPosition, emptyPosition)
+{
+    if(actualPosition[0] - emptyPosition[0] == -1)
+    {
+        console.log('down');
+    }
+    else 
+    if(actualPosition[0] - emptyPosition[0] == 1)
+    {
+            console.log('up');
+    }
+    else
+    if(actualPosition[1] - emptyPosition[1] == -1)
+    {
+        console.log('right');
+    }
+    else
+    if(actualPosition[1] - emptyPosition[1] == 1)
+    {
+        console.log('left');
+    }
+    else
+    {
+        console.log('NO MOVES!');
+    }
+
+}
+
 function addEventListeners()
 {
     let fichas = document.querySelectorAll('.token');
@@ -34,7 +62,9 @@ function addEventListeners()
         console.log(actualPosition);
 
         let emptyPosition = searchPosition('');
-        console.log(emptyPosition);
+        // console.log(emptyPosition); // POR DEFECTO SE HACE UN LLAMADO A UN ESPACIO VACÍO DEL TABLERO (2.2).
+
+        let movement = nextMovement(actualPosition, emptyPosition);
     }))
 }
 
